@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "adjust pattern"
+git commit -m "more wordlist"
 git push -f origin master
