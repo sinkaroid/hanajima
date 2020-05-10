@@ -1,0 +1,38 @@
+#!/bin/bash
+#sin
+
+RED=$(tput setaf 1) 
+GREEN=$(tput setaf 2) 
+CYAN=$(tput setaf 6) 
+WHITE=$(tput setaf 7) 
+begin=$(date +"%s")
+
+echo -e "${RED}
+
+.__                              __.__                
+|  |__ _____    ____ _____      |__|__| _____ _____   
+|  |  ||__  \  /    ||__  \     |  |  |/     ||__  \  
+|   Y  \/ __ \|   |  \/ __ \_   |  |  |  Y Y  \/ __ \_
+|___|  (____  /___|  (____  /\__|  |__|__|_|  (____  /
+     \/     \/     \/     \/\______|        \/     \/ 
+                                -Shell finder
+                                -selfinit .word with ur own wordlist"
+echo -e "${GREEN}"
+
+PS3='by number or "3" to exit: '
+options=("python-based" "perl-based" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "python-based")
+            cd bin;python hana.py
+            ;;
+        "perl-based")
+            cd bin;perl hana.pl
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
